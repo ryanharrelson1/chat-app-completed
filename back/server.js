@@ -5,10 +5,13 @@ import messageroutes from "./routes/message.routes.js";
 import connectDB from "./db/dbConnect.js";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.routes.js";
+import cors from "cors";
+import { app, server } from "./socket/socket.js";
 
 dotenv.config();
-const app = express();
+
 const Port = process.env.Port || 5000;
+
 app.use(cookieParser());
 app.use(express.json());
 
@@ -18,6 +21,6 @@ app.use("/api/auth", authroutes);
 app.use("/api/messages", messageroutes);
 app.use("/api/users", userRoutes);
 
-app.listen(Port, () =>
+server.listen(Port, () =>
   console.log("server is runnin at http://localhost:5000")
 );

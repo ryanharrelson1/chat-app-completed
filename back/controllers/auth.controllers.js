@@ -15,6 +15,7 @@ export const login = async (req, res) => {
     }
     genToken(user._id, res);
     res.status(200).json({
+      fullName: user.fullName,
       _id: user._id,
       username: user.username,
       profilePic: user.profilePic,
@@ -35,8 +36,8 @@ export const logout = async (req, res) => {
 
 export const signup = async (req, res) => {
   try {
-    const { fullName, username, password, confrimpassword } = req.body;
-    if (password !== confrimpassword) {
+    const { fullName, username, password, confirmPassword } = req.body;
+    if (password !== confirmPassword) {
       return res.status(400).json({ error: "password does not match" });
     }
 
@@ -61,6 +62,7 @@ export const signup = async (req, res) => {
       genToken(newuser._id, res);
 
       res.status(201).json({
+        fullName: newuser.fullName,
         _id: newuser._id,
         username: newuser.username,
       });
