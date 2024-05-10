@@ -22,7 +22,7 @@ const Signup = () => {
       <div className="h-full w-full p-6 bg-green-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 border border-gray-100">
         <h1 className="text-3xl font-semibold text-center text-gray-300">
           Signup
-          <span className="text-blue-500 ml-2">Chat App</span>
+          <span className="text-blue-500 ml-2">Dicord App</span>
         </h1>
         <form onSubmit={handleSubmit}>
           <div>

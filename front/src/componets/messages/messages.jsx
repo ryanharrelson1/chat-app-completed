@@ -26,7 +26,7 @@ const messages = () => {
       {loading && [...Array(3)].map((_, idx) => <MessageSkelton key={idx} />)}
 
       {!loading && messages.length === 0 && (
-        <p className="text-center">Send a messgae to start a conversation</p>
+        <p className="text-center">It's quiet here start A Chat!</p>
       )}
     </div>
   );
